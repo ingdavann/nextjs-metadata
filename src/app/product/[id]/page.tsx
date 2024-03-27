@@ -6,7 +6,7 @@ const page = (params : ParamProps) => {
     const id = params.id;
   return (
     <div>
-      ID is ${id}
+      ID is
     </div>
   )
 }
