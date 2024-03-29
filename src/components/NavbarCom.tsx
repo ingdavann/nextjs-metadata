@@ -28,6 +28,11 @@ export default function NavbarCom() {
             Product
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href={"./dashboard"} className={`${pathname==="/dashboard" && 'font-bold'}`}>
+            Dashboard
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
