@@ -27,16 +27,16 @@ const columns: TableColumn<userType>[] = [
   },
   {
     name: 'Profile',
-    selector: row => <img src={row.image} width={30} height={30} />,
+    selector:(row): any  => <img src={row.image} width={50} height={50} className="rounded"/>,
   }
 ]
-const handleChange = ({ selectedRows }) => { };
+const handleChange = ({} ) => { };
 export default function UserTable() {
   const url = "https://dummyjson.com/users";
-  const [getUser, setUser] = useState([]);
+  const [getUser, setUser] = useState<userType[]>([]);
   const [isLoading, setLoading] = useState(true);
-  const [getSearch, setSearch] = useState();
-  const [getFileter, setFilter] = useState([]);
+  const [getSearch, setSearch] = useState<string>("");
+  const [getFileter, setFilter] = useState<userType[]>([]);
   const fetchUser = async () => {
     const res = await fetch(url);
     const result = await res.json();
@@ -53,6 +53,7 @@ export default function UserTable() {
       return;
     }
     const result = getUser.filter((item) => {
+      // return item.toLowerCase().includes(getSearch.toLowerCase());
       return item.firstName.toLowerCase().includes(getSearch.toLowerCase());
     });
     setFilter(result);
