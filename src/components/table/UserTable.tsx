@@ -53,7 +53,6 @@ export default function UserTable() {
       return;
     }
     const result = getUser.filter((item) => {
-      // return item.toLowerCase().includes(getSearch.toLowerCase());
       return item.firstName.toLowerCase().includes(getSearch.toLowerCase());
     });
     setFilter(result);
@@ -77,14 +76,12 @@ export default function UserTable() {
 
         subHeader
         subHeaderComponent={
-          <Input type="text" className="rounded"
-          label="Search"
-          isClearable
-          radius="lg"
-          value={getSearch}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Type to search..."
-          />
+          <input
+            className="border-[1px] mt-5 mb-5 px-4 py-2 w-full rounded-md border-blue-400"
+            placeholder="Type to search..."
+            value={getSearch}
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
         }
         paginationComponentOptions={paginationComponent}
         data={getFileter}

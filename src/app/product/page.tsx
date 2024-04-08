@@ -1,5 +1,6 @@
 import CardProductCom from '@/components/CardProductCom';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import React from 'react'
 
 const url = "https://dummyjson.com/products";
@@ -29,12 +30,17 @@ const page = async () => {
       <section className='grid grid-cols-4 gap-5 mt-5'>
       {
         productItem.map((product: productType)=>(
-        <CardProductCom 
-          key={product.id}
-          title={product.title}
-          description={product.description}
-          thumbnail={product.thumbnail}
-       />
+        <Link as={`product/${product.id}`} href="#" key={product.id}>
+          <CardProductCom
+            title={product.title}
+            description={product.description}
+            thumbnail={product.thumbnail}
+            price={product.price}
+            id={0}
+            category=""
+            stock={0}
+        />
+       </Link>
       ))
     }
       </section>

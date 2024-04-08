@@ -19,17 +19,17 @@ export default function NavbarCom() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href={"./about-us"} className={`${pathname==="/about-us" && 'font-bold'}`}>
+          <Link color="foreground" href={"/about-us"} className={`${pathname==="/about-us" && 'font-bold'}`}>
             About Us
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href={"./product"} className={`${pathname==="/product" && 'font-bold'}`}>
+          <Link color="foreground" href={"/product"} className={`${pathname==="/product" && 'font-bold'}`}>
             Product
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href={"./dashboard"} className={`${pathname==="/dashboard" && 'font-bold'}`}>
+          <Link color="foreground" href={"/dashboard"} className={`${pathname==="/dashboard" && 'font-bold'}`}>
             Dashboard
           </Link>
         </NavbarItem>
